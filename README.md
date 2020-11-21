@@ -1,5 +1,8 @@
 # shaolin-blog
 
+## What?👀
+这是使用`Vue3+Typescript+单元测试`写的个人博客项目
+
 ## Project setup
 ```
 yarn install
