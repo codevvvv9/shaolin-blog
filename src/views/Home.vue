@@ -1,7 +1,8 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <Timeline msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="section">
+    <div class="container">
+      <Timeline />
+    </div>
   </div>
 </template>
 

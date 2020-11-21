@@ -1,34 +1,27 @@
 <template>
-  <section>
-    
-  </section>
+  <nav class="is-primary panel">
+    <p class="panel-tabs">
+      <a href="" v-for="(period, index) in periods" :key="index">
+        {{ period }}
+      </a>
+    </p>
+  </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-
+import { defineComponent } from "vue";
+import { Period } from "@/types";
 export default defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: String,
+  name: "Timeline",
+  setup() {
+    const periods: Period[] = ["今天", "本周", "本月"];
+
+    return {
+      periods,
+    };
   },
 });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+<style scoped></style>
