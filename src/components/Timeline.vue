@@ -22,6 +22,7 @@ import { Period } from "@/types";
 import { todayPost, thisWeek, thisMonth } from "@/mock";
 import moment from "moment";
 import TimelinePost from "./TimelinePost.vue";
+import { useStore } from "@/store";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -37,6 +38,10 @@ export default defineComponent({
     const setPeriod = (period: Period) => {
       selectedPeriod.value = period;
     };
+
+    const store = useStore()
+    console.log("setup -> store", store)
+    
 
     await delay(2000);
 
