@@ -1,0 +1,7 @@
+{
+  //解决eslint对@ts-ignore的限制
+  "rules": {
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
+  }
+}

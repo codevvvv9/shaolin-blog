@@ -1,6 +1,7 @@
 import { reactive } from "vue";
 import { Post } from "../types/index";
 import { todayPost, thisWeek, thisMonth } from "@/mock";
+import axios from 'axios';
 
 /**
  * 目标是构建如下所示数据：
@@ -49,6 +50,23 @@ class Store {
    */
   public getState(): State {
     return this.state;
+  }
+
+  async fetchPosts() {
+    const response = await axios.get<Post[]>("/posts")
+    //处理数据
+    const ids: string[] = []
+    const all: Record<string, Post> = {}
+    for (const post of response.data) {
+      ids.push(post.id.toString())
+      all[post.id] = post
+    }
+
+    this.state.posts = {
+      ids,
+      all,
+      loaded: true
+    }
   }
 }
 
