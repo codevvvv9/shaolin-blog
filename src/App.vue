@@ -1,15 +1,15 @@
 <template>
-  <Home></Home>
+  <div class="section">
+    <div class="container">
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import Home from "@/views/Home.vue"; // @ is an alias to /src
 
 export default defineComponent({
   name: "APP",
-  components: {
-    Home,
-  },
 });
 </script>
 <style></style>

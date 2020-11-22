@@ -1,16 +1,12 @@
 <template>
-  <div class="section">
-    <div class="container">
-      <Suspense>
-        <template #default>
-          <Timeline />
-        </template>
-        <template #fallback>
-          <Progress />
-        </template>
-      </Suspense>
-    </div>
-  </div>
+  <Suspense>
+    <template #default>
+      <Timeline />
+    </template>
+    <template #fallback>
+      <Progress />
+    </template>
+  </Suspense>
 </template>
 
 <script lang="ts">
