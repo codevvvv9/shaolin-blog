@@ -12,7 +12,7 @@
       </a>
     </p>
 
-    <TimelinePost v-for="post in posts" :key="post.id" :post="post"/>
+    <TimelinePost v-for="post in posts" :key="post.id" :post="post" />
   </nav>
 </template>
 
@@ -22,17 +22,23 @@ import { Period } from "@/types";
 import { todayPost, thisWeek, thisMonth } from "@/mock";
 import moment from "moment";
 import TimelinePost from "./TimelinePost.vue";
+
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export default defineComponent({
   name: "Timeline",
   components: {
-    TimelinePost
+    TimelinePost,
   },
-  setup() {
+  async setup() {
     const periods: Period[] = ["今天", "本周", "本月"];
     const selectedPeriod = ref<Period>("今天");
+
     const setPeriod = (period: Period) => {
       selectedPeriod.value = period;
     };
+
+    await delay(2000);
 
     const posts = computed(() =>
       [todayPost, thisWeek, thisMonth].filter((post) => {
