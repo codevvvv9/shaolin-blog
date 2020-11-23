@@ -24,7 +24,7 @@ import moment from "moment";
 import TimelinePost from "./TimelinePost.vue";
 import { useStore } from "@/store";
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+// const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export default defineComponent({
   name: "Timeline",
@@ -50,7 +50,7 @@ export default defineComponent({
       return acc.concat(post);
     }, []);
 
-    await delay(2000);
+    // await delay(2000);
 
     const posts = computed(() =>
       allPosts.filter((post) => {
